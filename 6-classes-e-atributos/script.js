@@ -1,34 +1,17 @@
-// Mostre no console cada parágrafo do site
-const paragrafos = document.querySelectorAll("p");
-console.log(paragrafos);
+const menu = document.querySelector(".menu");
+menu.classList.add("ativo");
+menu.classList.remove("azul");
+menu.classList.toggle("azul");
 
-paragrafos.forEach((item) => {
-  console.log(item);
-});
+if (menu.classList.contains("azul")) {
+  menu.classList.add("possui-azul");
+} else {
+  menu.classList.add("nao-possui-azul");
+}
 
-// Mostre o texto dos parágrafos no console
-paragrafos.forEach((item) => {
-  console.log(item.innerText);
-});
+menu.className += " vermelho";
 
-// const paragrafosTexto = Array.from(paragrafos);
+// console.log(menu.classList);
 
-// paragrafosTexto.forEach((i) => {
-//   return console.log(i.innerText);
-// });
-
-// Como corrigir os erros abaixo:
-const imgs = document.querySelectorAll("img");
-
-imgs.forEach((item, index) => {
-  console.log(item, index);
-});
-
-let i = 0;
-imgs.forEach(() => {
-  console.log(i++);
-});
-
-imgs.forEach(() => i++);
-
-console.log(i);
+const animais = document.querySelector(".animais");
+console.log(animais.attributes);
