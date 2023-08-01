@@ -1,43 +1,43 @@
-// Verifique a distância da primeira imagem
-// em relação ao topo da página
-function somaImagens() {
-  const primeiraImg = document.querySelector("img");
-  const primeiraImgOffSetTop = primeiraImg.offsetTop;
-  console.log(primeiraImg, primeiraImgOffSetTop);
+const img = document.querySelector("img");
 
-  // Retorne a soma da largura de todas as imagens
-  const imagens = document.querySelectorAll("img");
-  let soma = 0;
-  imagens.forEach((item) => {
-    soma += item.offsetWidth;
-    // console.log(item.offsetWidth);
-  });
-  console.log(soma);
+function callback(e) {
+  // console.log(e);
 }
 
-window.onload = function () {
-  somaImagens();
-};
+img.addEventListener("click", callback);
 
-// Verifique se os links da página possuem
-// o mínimo recomendado para telas utilizadas
-// com o dedo. (48px/48px de acordo com o google)
-const linksPagina = document.querySelectorAll(".menu a");
-linksPagina.forEach((link) => {
-  const linkWidth = link.offsetWidth;
-  const linkHeight = link.offsetHeight;
-  if (linkWidth >= 48 && linkHeight >= 48) {
-    console.log(link, "Possui boa acessibilidade");
-  } else {
-    console.log(link, "Não possui boa acessibilidade");
-  }
-});
+// -----
 
-// Se o browser for menor que 720px,
-// adicione a classe menu-mobile ao menu
+const animaisLista = document.querySelector(".animais-lista");
 
-const browserSmall = window.matchMedia("(max-width: 720px)").matches;
-if (browserSmall) {
-  const menu = document.querySelector(".menu");
-  menu.classList.add("menu-mobile");
+function callbackLista(event) {
+  console.log(event.currentTarget); //vai mostrar o elemento que selecionamos na variável
+  console.log(event.target); //vai mostrar exatamente o elemento que você clicou em cima
+  console.log(event.type);
 }
+
+animaisLista.addEventListener("click", callbackLista);
+
+console.log(animaisLista);
+
+// -----
+
+const linkExterno = document.querySelector('a[href^="https"]');
+
+function callbackLink(event) {
+  event.preventDefault();
+  // console.log(event.currentTarget);
+  console.log(this.getAttribute("href"));
+}
+
+linkExterno.addEventListener("click", callbackLink);
+
+// -----
+
+const h1 = document.querySelector("h1");
+
+function handleEvent(event) {
+  console.log(event.type, event);
+}
+
+h1.addEventListener("click", handleEvent);
