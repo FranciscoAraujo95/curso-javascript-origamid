@@ -1,19 +1,29 @@
-const menu = document.querySelector(".menu");
-menu.classList.add("ativo"); //Adiciona a classe ativo
-menu.classList.remove("azul"); //Remove a classe azul
-menu.classList.toggle("azul"); //Se não tiver a classe, ele coloca, se tiver, ele retira
+// Adicione a classe ativo a todos os itens do menu
+const itensMenu = document.querySelectorAll(".menu a");
+itensMenu.forEach((item) => {
+  item.classList.add("ativo");
+});
+console.log(itensMenu);
 
-//contains verifica se o elemento contém determinada classe
-if (menu.classList.contains("azul")) {
-  menu.classList.add("possui-azul");
-} else {
-  menu.classList.add("nao-possui-azul");
-}
+// Remove a classe ativo de todos os itens do menu e mantenha apenas no primeiro
+itensMenu.forEach((item) => {
+  item.classList.remove("ativo");
+});
+itensMenu[0].classList.add("ativo");
 
-//Também dá pra adicionar classes utilizando o .className dessa forma
-menu.className += " vermelho";
+// Verifique se as imagens possuem o atributo alt
+const imgs = document.querySelectorAll("img");
+imgs.forEach((item) => {
+  const possuiAtributo = item.hasAttribute("alt");
+  console.log(item, possuiAtributo);
+  // if (img.hasAttribute("alt")) {
+  //   console.log("Todos tem o atributo");
+  // } else {
+  //   console.log("Não tem o atributo");
+  // }
+});
 
-// console.log(menu.classList);
-
-const animais = document.querySelector(".animais");
-console.log(animais.classList);
+// Modifique o href do link externo no menu
+const hrefMenu = document.querySelector('a[href^="https"]');
+hrefMenu.setAttribute("href", "https://www.google.com");
+console.log(hrefMenu);
