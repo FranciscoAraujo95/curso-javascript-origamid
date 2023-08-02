@@ -9,6 +9,32 @@ dt,
 dl {
   margin: 0px;
   padding: 0px;
+  transition: 0.3s;
+}
+
+.azul {
+  background: teal;
+}
+
+h1.rosa {
+  color: pink;
+}
+
+.ativo {
+}
+
+.dark-light {
+  background: #222;
+  color: white;
+  transition: 0.3s;
+}
+
+.teal-light {
+  background: teal;
+}
+
+.pink-light {
+  background: pink;
 }
 
 /* Deixa as imagens responsivas ao tamanho do container */
@@ -30,10 +56,63 @@ body {
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
 
+/* documentElement no JS */
+html.texto-maior {
+  font-size: 120%;
+}
+
 .menu {
   grid-column: 3/5;
   margin: 2rem 0;
   background: #fb5;
+  position: relative;
+}
+
+.black-circle {
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.37);
+  background: #222;
+  position: absolute;
+  top: 25%;
+  left: 82%;
+}
+
+.black-circle.ativo {
+  background: white;
+  transition: 0.3s;
+}
+
+.teal-circle {
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.37);
+  background: teal;
+  position: absolute;
+  top: 25%;
+  left: 86%;
+}
+
+.pink-circle {
+  content: '';
+  cursor: pointer;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.37);
+  background: pink;
+  position: absolute;
+  top: 25%;
+  left: 90%;
 }
 
 .menu ul {
@@ -48,7 +127,7 @@ body {
   margin-right: 10px;
   color: #222;
   text-decoration: none;
-  font-family: "IBM Plex Mono";
+  font-family: 'IBM Plex Mono';
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -67,7 +146,7 @@ body {
 }
 
 .titulo {
-  font-family: "Playfair Display SC", georgia;
+  font-family: 'Playfair Display SC', georgia;
   font-size: 6rem;
   line-height: 1;
   font-weight: 400;
@@ -76,7 +155,7 @@ body {
 }
 
 .animais h2 {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -85,7 +164,7 @@ body {
 }
 
 .animais h2::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 40px;
   height: 10px;
@@ -113,9 +192,28 @@ body {
   background: #fb5;
   border-left: 4px solid #faf6ed;
   border-right: 4px solid #faf6ed;
+  transition: 0.3s;
 }
+
+.animais-lista.dark-light::-webkit-scrollbar-thumb {
+  background: #fb5;
+  border-left: 4px solid #222;
+  border-right: 4px solid #222;
+}
+
+.animais-lista.ativo::-webkit-scrollbar-thumb {
+  background: #fb5;
+  border-left: 4px solid #222;
+  border-right: 4px solid #222;
+}
+
 .animais-lista::-webkit-scrollbar-track {
   background: #faf6ed;
+  transition: 0.3s;
+}
+
+.animais-lista.dark-light::-webkit-scrollbar-track {
+  background: #222;
 }
 
 .animais-descricao {
@@ -131,7 +229,7 @@ body {
 }
 
 .faq-lista dt {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -139,7 +237,7 @@ body {
 }
 
 .faq-lista dt::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 20px;
   height: 10px;
@@ -169,7 +267,7 @@ body {
 }
 
 .dados li::before {
-  content: "";
+  content: '';
   display: inline-block;
   width: 20px;
   height: 10px;
@@ -185,8 +283,9 @@ body {
 
 .copy p {
   padding: 20px;
+  color: #222;
   font-size: 1.1rem;
-  font-family: "IBM Plex mono", monospace;
+  font-family: 'IBM Plex mono', monospace;
   font-weight: bold;
 }
 
