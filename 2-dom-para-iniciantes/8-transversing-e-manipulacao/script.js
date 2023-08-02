@@ -1,73 +1,25 @@
-// Quando o usuário clicar nos links internos do site,
-// adicione a classe ativo ao item clicado e remova dos
-// demais itens caso eles possuam a mesma. Previna
-// o comportamento padrão desses links
-const linksInternos = document.querySelectorAll('a[href^="#"]');
+// Duplique o menu e adicione ele em copy
+const menu = document.querySelector(".menu");
+const cloneMenu = menu.cloneNode(true);
+const body = document.querySelector("body");
+const copy = document.querySelector(".copy");
+console.log(body);
+console.log(copy.parentElement);
 
-function handleAtivo(event) {
-  event.preventDefault();
-  linksInternos.forEach((link) => {
-    link.classList.remove("ativo");
-  });
-  event.currentTarget.classList.add("ativo");
-  //this.classList.add('ativo') também funcionaria, pois o this faz referência exatamente ao elemento selecionado na constante, no caso, cada link interno exatamente.
-}
+body.replaceChild(cloneMenu, copy);
 
-linksInternos.forEach((links) => {
-  links.addEventListener("click", handleAtivo);
-});
+// Selecione o primeiro DT da dl de Faq
+const faq = document.querySelector(".faq");
+const primeiroDt = faq.querySelector(".faq-lista dt");
 
-// Selecione todos os elementos do site começando a partir do body,
-// ao clique mostre exatamente quais elementos estão sendo clicados
+console.log(faq);
+console.log(primeiroDt);
 
-const allElements = document.querySelectorAll("body *");
+// Selecione o DD referente ao primeiro DT
 
-function handleElemento(event) {
-  console.log(event.currentTarget);
-}
+const proximoDD = primeiroDt.nextElementSibling;
+console.log(proximoDD);
 
-allElements.forEach((item) => {
-  item.addEventListener("click", handleElemento);
-});
-
-// Utilizando o código anterior, ao invés de mostrar no console,
-// remova o elemento que está sendo clicado, o método remove() remove um elemento
-
-function removeElemento(event) {
-  event.currentTarget.remove();
-}
-
-// allElements.forEach(item => {
-//   item.addEventListener('click', removeElemento);
-// });
-
-// allElements.addEventListener('click', removeTarget);
-
-// Se o usuário clicar na tecla (t), aumente todo o texto do site.
-
-const allText = document.body.textContent;
-
-function textoGrande(event) {
-  if (event.key === "t") {
-    //documentElement fala diretamente com o html inteiro da página
-    document.documentElement.classList.toggle("texto-maior");
-  }
-}
-
-window.addEventListener("keydown", textoGrande);
-
-// console.log(allText);
-
-const circulos = document.querySelectorAll("span");
-
-function mudarCor(event) {
-  circulos.forEach((circle) => {
-    circle.classList.remove("ativo");
-  });
-  event.currentTarget.classList.add("ativo");
-}
-
-circulos.forEach((item) => {
-  item.addEventListener("click", mudarCor);
-});
-console.log(circulos);
+// Substitua o conteúdo html de .faq pelo de .animais
+const animais = document.querySelector(".animais");
+faq.innerHTML = animais.innerHTML;

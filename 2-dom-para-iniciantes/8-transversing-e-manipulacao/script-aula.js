@@ -1,102 +1,48 @@
-const img = document.querySelector('img');
+const h1 = document.querySelector("h1");
+const animaisLista = document.querySelector(".animais-descricao");
+console.log(h1.innerHTML);
+console.log(h1.outerHTML);
 
-function callback(e) {
-  // console.log(e);
-}
+// h1.outerHTML = "<p> Novo Título </p>";
+// console.log(animaisLista.innerHTML);
 
-img.addEventListener('click', callback);
+const lista = document.querySelector(".animais-lista");
+console.log(lista.children[lista.children.length - 1]);
+// console.log(lista.querySelector("li:last-child"));
 
-// -----
+console.log(lista.previousSibling);
 
-const animaisLista = document.querySelector('.animais-lista');
+const menu = document.querySelector(".menu");
+const link = menu.querySelector("a");
+const copy = document.querySelector(".copy");
 
-function callbackLista(event) {
-  console.log(event.currentTarget); //vai mostrar o elemento que selecionamos na variável
-  console.log(event.target); //vai mostrar exatamente o elemento que você clicou em cima
-  console.log(event.type);
-}
+console.log(link);
 
-// animaisLista.addEventListener('click', callbackLista);
+const animais = document.querySelector(".animais");
+const contato = document.querySelector(".contato");
+const tituloContato = contato.querySelector(".titulo");
+const mapa = document.querySelector(".mapa");
 
-console.log(animaisLista);
+// contato.replaceChild(lista, tituloContato)
+// contato.removeChild(tituloContato);
+// contato.insertBefore(animais, mapa);
+// animais.appendChild(tituloContato);
 
-// -----
+// console.log(contato)
+// console.log(tituloContato)
 
-const linkExterno = document.querySelector('a[href^="https"]');
+const novoh1 = document.createElement("h1");
 
-function callbackLink(event) {
-  event.preventDefault();
-  // console.log(event.currentTarget);
-  console.log(this.getAttribute('href'));
-}
+novoh1.innerText = "Novo Título";
+novoh1.classList.add("titulo");
+novoh1.style.marginTop = "4rem";
 
-linkExterno.addEventListener('click', callbackLink);
+mapa.appendChild(novoh1);
 
-// -----
+// const h1 = document.querySelector("h1");
+const faq = document.querySelector(".faq");
 
-const h1 = document.querySelector('h1');
+const cloneH1 = h1.cloneNode(true);
+cloneH1.classList.add("azul");
 
-function handleEvent(event) {
-  console.log(event.type, event);
-}
-
-// h1.addEventListener('click', handleEvent);
-// h1.addEventListener('mouseenter', handleEvent);
-// // h1.addEventListener('mousemove', handleEvent);
-
-// window.addEventListener('scroll', handleEvent);
-// window.addEventListener('resize', handleEvent);
-// window.addEventListener('keydown', handleEvent);
-
-function handleKeyboard(event) {
-  if (event.key === 'a') {
-    document.body.classList.toggle('azul');
-    console.log(event.key);
-  } else if (event.key === 'p') {
-    const titulos = document.querySelectorAll('.titulo');
-    titulos.forEach(item => {
-      item.classList.toggle('rosa');
-    });
-  } else if (event.key === 'd') {
-    document.body.classList.toggle('dark-light');
-    const animaisLista = document.querySelector('.animais-lista');
-    animaisLista.classList.toggle('dark-light');
-  }
-}
-window.addEventListener('keydown', handleKeyboard);
-
-//Modo black
-const blackButton = document.querySelector('.black-circle');
-function darkModeButton() {
-  console.log('clicou');
-  document.body.classList.toggle('dark-light');
-  blackButton.classList.toggle('ativo');
-}
-blackButton.addEventListener('click', darkModeButton);
-
-//Modo verde
-const tealButton = document.querySelector('.teal-circle');
-function tealModeButton() {
-  document.body.classList.toggle('teal-light');
-}
-tealButton.addEventListener('click', tealModeButton);
-
-//Modo rosa
-const pinkButton = document.querySelector('.pink-circle');
-function pinkModeButton() {
-  document.body.classList.toggle('pink-light');
-}
-pinkButton.addEventListener('click', pinkModeButton);
-
-/////////////////////
-
-const imgs = document.querySelectorAll('img');
-
-function mostrarNoConsole(event) {
-  console.log(event.target.getAttribute('src'));
-}
-
-//adicionar um eventlistener à todos os itens de uma nodelist utilizando o foreach
-imgs.forEach(imagem => {
-  imagem.addEventListener('click', mostrarNoConsole);
-});
+faq.appendChild(cloneH1);
