@@ -1,0 +1,40 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: rgb(167, 167, 167);
+  color: #222;
+
+  /* display: grid; */
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+.menu {
+  grid-column: 3/5;
+  margin: 2rem 0;
+  background: #fb5;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.menu li a {
+  padding: 10px;
+  margin-right: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #222;
+  font-size: 1.1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
