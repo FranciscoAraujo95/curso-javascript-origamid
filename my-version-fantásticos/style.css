@@ -11,14 +11,19 @@ body {
   background: rgb(167, 167, 167);
   color: #222;
 
-  /* display: grid; */
+  display: grid;
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
 
 .menu {
   grid-column: 3/5;
   margin: 2rem 0;
-  background: #fb5;
+  background: teal;
 }
 
 .menu ul {
@@ -34,7 +39,141 @@ body {
   text-transform: uppercase;
   color: #222;
   font-size: 1.1rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: bold;
   letter-spacing: 0.1em;
+}
+
+.grid-section {
+  grid-column: 2/4;
+  margin: 2rem 0;
+
+  display: grid;
+  grid-template-columns: 100px 280px 1fr;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.titulo {
+  grid-column: 1/4;
+  margin-bottom: 2rem;
+  font-size: 6rem;
+  line-height: 1;
+  font-family: "Playfair Display SC", georgia;
+  font-weight: 400;
+}
+
+.animais-lista {
+  grid-column: 2;
+  height: 340px;
+  overflow-y: scroll;
+}
+
+.animais-lista::-webkit-scrollbar {
+  width: 20px;
+}
+
+.animais-lista::-webkit-scrollbar-thumb {
+  background: teal;
+  border-left: 4px solid rgb(167, 167, 167);
+  border-right: 4px solid rgb(167, 167, 167);
+}
+
+.animais-lista::-webkit-scrollbar-track {
+  background: rgb(167, 167, 167);
+}
+
+.animais-descricao {
+  grid-column: 3;
+}
+
+.animais-descricao h2 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: teal;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.315);
+}
+
+.animais-descricao h2::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  background: teal;
+  margin-right: 10px;
+}
+
+.animais-descricao p {
+  font-family: Helvetica, arial;
+  text-align: justify;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.faq dl {
+  grid-column: 2/4;
+}
+
+.faq dd {
+  font-size: 1.2rem;
+  font-family: "IBM Plex Mono";
+  font-weight: bold;
+  color: teal;
+  margin-bottom: 0.5rem;
+}
+
+.faq dd::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  background: teal;
+  margin-right: 10px;
+}
+
+.faq dt {
+  font-family: Helvetica, arial;
+  line-height: 1.2;
+  margin-left: 30px;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.mapa {
+  grid-column: 2;
+}
+
+.dados {
+  grid-column: 3;
+}
+
+.dados li {
+  font-family: Helvetica, arial;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dados li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  vertical-align: middle;
+  background: teal;
+  margin-right: 10px;
+}
+
+.copy {
+  background: teal;
+  grid-column: 3/5;
+  padding: 20px;
+  margin-bottom: 2rem;
+}
+
+.copy p {
+  font-size: 1.2rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
 }
