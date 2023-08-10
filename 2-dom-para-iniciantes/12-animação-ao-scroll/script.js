@@ -4,11 +4,11 @@ function initTabNav() {
   const tabContent = document.querySelectorAll(".js-tabcontent section");
   //deixa o primeiro item do content ativo ao carregar a página
 
-  //Esse if verifica se esses elementos existem na página, é uma verificação d dois fatores, os dois tem que retornar true pro código executar
+  //Esse if verifica se esses elementos existem na página, é uma verificação de dois fatores, os dois tem que retornar true pro código executar
   if (tabMenu.length && tabContent.length) {
     tabContent[0].classList.add("ativo");
 
-    //Essa função vai fazer um loop por cada item das sections, removendo a classe ativo e adicionando apenas no elemento alvo
+    //Essa função vai fazer um loop por cada item das sections, removendo a classe ativo e adicionando apenas no elemento alvo clicado
     function activeTab(index) {
       tabContent.forEach((section) => {
         section.classList.remove("ativo");

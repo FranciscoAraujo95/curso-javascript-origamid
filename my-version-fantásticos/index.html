@@ -10,6 +10,9 @@
       href="https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Playfair+Display+SC&display=swap"
       rel="stylesheet"
     />
+    <script>
+      document.documentElement.className += "js";
+    </script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -23,7 +26,7 @@
     </nav>
     <section class="grid-section animais" id="animais">
       <h1 class="titulo">Animais Fantásticos</h1>
-      <ul class="animais-lista">
+      <ul class="animais-lista js-tabmenu">
         <li>
           <img src="img/imagem1.jpg" />
         </li>
@@ -43,7 +46,7 @@
           <img src="img/imagem6.jpg" />
         </li>
       </ul>
-      <div class="animais-descricao">
+      <div class="animais-descricao js-tabcontent">
         <section>
           <h2>Raposa</h2>
           <p>
@@ -136,35 +139,35 @@
 
     <section class="grid-section faq" id="faq">
       <h1 class="titulo">Faq</h1>
-      <dl>
-        <dd>Os animais são Fantásticos?</dd>
-        <dt>
+      <dl class="faq-lista js-accordion">
+        <dt>Os animais são Fantásticos?</dt>
+        <dd>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam placeat
           eaque ad assumenda, minima nulla ducimus? Suscipit est minima
           reprehenderit quod repellat, ullam modi voluptas id vel voluptatum,
           possimus neque!
-        </dt>
-        <dd>Como podemos protegê-los?</dd>
-        <dt>
+        </dd>
+        <dt>Como podemos protegê-los?</dt>
+        <dd>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam placeat
           eaque ad assumenda, minima nulla ducimus? Suscipit est minima
           reprehenderit quod repellat, ullam modi voluptas id vel voluptatum,
           possimus neque!
-        </dt>
-        <dd>Um dia poderemos revê-los?</dd>
-        <dt>
+        </dd>
+        <dt>Um dia poderemos revê-los?</dt>
+        <dd>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam placeat
           eaque ad assumenda, minima nulla ducimus? Suscipit est minima
           reprehenderit quod repellat, ullam modi voluptas id vel voluptatum,
           possimus neque!
-        </dt>
-        <dd>Gostaria de conhecer mais?</dd>
-        <dt>
+        </dd>
+        <dt>Gostaria de conhecer mais?</dt>
+        <dd>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam placeat
           eaque ad assumenda, minima nulla ducimus? Suscipit est minima
           reprehenderit quod repellat, ullam modi voluptas id vel voluptatum,
           possimus neque!
-        </dt>
+        </dd>
       </dl>
     </section>
 
