@@ -24,3 +24,5 @@ console.log(semDefinir);
 // time = "Flamengo";
 
 // console.log(time);
+
+//Recomeçando esse curso em 28/06/2024
