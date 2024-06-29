@@ -5,7 +5,7 @@ var frase = "Brasil";
 var numeroString = "95";
 
 // Declare uma variável com a sua idade
-var idade = 27;
+var idade = 28;
 
 // Declare duas variáveis, uma com seu nome
 // e outra com seu sobrenome e some as mesmas
@@ -14,9 +14,9 @@ var sobrenome = "Araujo";
 var nomeCompleto = `${nome} ${sobrenome}`;
 
 // Coloque a seguinte frase em uma variável: It's time
-var frase = `It's me`;
+var frase = `It's time`;
 console.log(frase);
 
 // Verifique o tipo da variável que contém o seu nome
 var verificarTipoNome = typeof nome;
-console.log(typeof verificarTipoNome);
+console.log(verificarTipoNome);
