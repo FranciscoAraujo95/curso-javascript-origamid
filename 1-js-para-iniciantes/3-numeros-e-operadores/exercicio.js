@@ -1,6 +1,6 @@
 // Qual o resultado da seguinte expressão?
 var total = 10 + (5 * 2) / 2 + 20;
-console.log(total);
+console.log(total); //35
 
 // Crie duas expressões que retornem NaN
 var NaNi = +"100e" + 25;

@@ -3,13 +3,11 @@ var possuiGraduacao = false;
 var possuiDoutorado = true;
 if (possuiGraduacao) {
   console.log("Possui graduação!");
-  // var x = 10;
 } else if (possuiDoutorado) {
   console.log("Possui doutorado!");
 } else {
   console.log("Não possui nada.");
 }
-// console.log(x);
 
 var nome = "10kg" / 10;
 
