@@ -62,6 +62,8 @@ function faltaVisitar(paisesVisitados) {
 }
 console.log(faltaVisitar(30));
 
+//Escopo léxico
+
 var profissao = "Desenvolvedor";
 function dados() {
   var nome = "Francisco";
